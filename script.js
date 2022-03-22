@@ -5,8 +5,8 @@ console.log(40 + 8 + 23 - 10);
 console.log ("Jonas");
 console.log (23);
 
-let fistName = "Jonas";
-console.log(fistName);
+let firstName = "Jonas";
+console.log(firstName);
 */
 
 // let javascriptIsFun = true;
@@ -134,6 +134,7 @@ lines
 `);
 */
 
+/*
 const age = 15;
 
 if (age >= 18) {
@@ -152,3 +153,19 @@ if (birthYear <= 2000) {
   century = 21;
 }
 console.log(century);
+*/
+
+// Chalenge 2
+const massMark = 95;
+const heightMark = 1.88;
+const massJohn = 85;
+const heightJohn = 1.76;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+
+if (BMIMark > BMIJohn) {
+  console.log("Marks BMI is higher than John's");
+} else {
+  console.log("Johns BMI is higher than Marks");
+}
