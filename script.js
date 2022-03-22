@@ -191,7 +191,7 @@ console.log("23" * "2");
 
 //truthy and falsy values
 //falsy values: 0, 1, '', undefined,null, NaN
-
+/*
 console.log(Boolean(0));
 console.log(Boolean(undefined));
 console.log(Boolean("Joans"));
@@ -211,3 +211,23 @@ if (height) {
 } else {
   console.log("Height is UNDEFINED");
 }
+*/
+
+//equality operators
+const age = 18;
+if (age === 18) console.log("You just became an an adult");
+
+if (age == 18) console.log("You just became an an adult");
+
+const favourite = Number(prompt("Whtats your favourite number?"));
+console.log(favourite);
+
+if (favourite === 23) {
+  console.log("23 is amazing number");
+} else if (favourite === 7) {
+  console.log("7 is also a cool number ");
+} else {
+  console.log("number is not 23 or 7");
+}
+
+if (favourite !== 23) console.log("why not 23");
