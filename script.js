@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 let js = "amazing";
 console.log(40 + 8 + 23 - 10);
@@ -351,20 +353,71 @@ if (hasDriversLicence && hasGoodVision && !isTired) {
 
 //conditional operator
 
-const age = 23;
+// const age = 23;
 // age >= 18
 //   ? console.log("I like to drink wine")
 //   : console.log("I like to drink water");
 
-const drink = age >= 18 ? "wine" : "water";
-console.log(drink);
+// const drink = age >= 18 ? "wine" : "water";
+// console.log(drink);
 
-let drink2;
-if (age >= 18) {
-  drink2 = "wine";
-} else {
-  drink2 = "water";
+// let drink2;
+// if (age >= 18) {
+//   drink2 = "wine";
+// } else {
+//   drink2 = "water";
+// }
+// console.log(drink2);
+
+// console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+
+// //challege
+// const bill = 275;
+// const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+// console.log(
+//   `The bill was ${bill}, the tip was ${tip}, and the total value is ${
+//     bill + tip
+//   }`
+// );
+
+// let hasDriversLicence = false;
+// const passTest = true;
+
+// if (passTest) hasDriversLicence = true;
+// if (hasDriversLicence) console.log("I can drive");
+
+// const interface = "Audio";
+// const private = 534;
+
+//functions
+
+// function logger() {
+//   console.log("my name is jonas");
+// }
+
+// //calling/runing/invoking function
+// logger();
+// logger();
+// logger();
+
+// function fruitProcessor(apples, oranges) {
+//   const juice = `Juice with ${apples} aplpes and ${oranges} oranges.`;
+//   return juice;
+// }
+
+// const appleJuice = fruitProcessor(5, 0);
+// console.log(appleJuice);
+
+//function expression
+function calcAge1(birthYear) {
+  return 2037 - birthYear;
 }
-console.log(drink2);
+const age1 = calcAge1(1991);
 
-console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+//function expression
+const calcAge2 = function (birthYear) {
+  return 2037 - birthYear;
+};
+const age2 = calcAge2(1991);
+
+console.log(age1, age2);
