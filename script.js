@@ -435,16 +435,58 @@ if (hasDriversLicence && hasGoodVision && !isTired) {
 // console.log(yearsUntilRetirement(1991, "Jonas"));
 
 //functions calling another funtions
+// function cutFruitPieces(fruit) {
+//   return fruit * 4;
+// }
 
-function cutFruitPieces(fruit) {
-  return fruit * 4;
+// function fruitProcessor(apples, oranges) {
+//   const applePieces = cutFruitPieces(apples);
+//   const orangePieces = cutFruitPieces(oranges);
+
+//   const juice = `Juice with ${applePieces} piece of apple and ${orangePieces} pieces of oranges`;
+//   return juice;
+// }
+// console.log(fruitProcessor(2, 3));
+
+// const calcAge = function (birthYear) {
+//   return 2037 - birthYear;
+// };
+
+// const yearsUntilRetirement = function (birthYear, firstName) {
+//   const age = calcAge(birthYear);
+//   const retirement = 65 - age;
+
+//   if (retirement > 0) {
+//     return retirement;
+//   } else {
+//     return -1;
+//   }
+// };
+
+// console.log(yearsUntilRetirement(1991, "JOnas"));
+
+// const calcAge3 = (birthYear) => 2037 - birthYear;
+// const age3 = calcAge3(1991);
+// console.log(age3);
+
+// const yearsUntilRetirement = (birthYear, firstName) => {
+//   const age = 2037 - birthYear;
+//   const retirement = 65 - age;
+//   return `${firstName} retires in ${retirement} years`;
+// };
+// console.log(yearsUntilRetirement(1991, "Jonas"));
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+const scoreDolphins = calcAverage(44, 23, 71);
+const scoreKoalas = calcAverage(65, 54, 49);
+
+function checkWinner(avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins wins (${avgDolphins} vs. ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas wins (${avgKoalas} vs. ${avgDolphins})`);
+  } else {
+    console.log("No team wins");
+  }
 }
-
-function fruitProcessor(apples, oranges) {
-  const applePieces = cutFruitPieces(apples);
-  const orangePieces = cutFruitPieces(oranges);
-
-  const juice = `Juice with ${applePieces} piece of apple and ${orangePieces} pieces of oranges`;
-  return juice;
-}
-console.log(fruitProcessor(2, 3));
+checkWinner(scoreDolphins, scoreKoalas);
