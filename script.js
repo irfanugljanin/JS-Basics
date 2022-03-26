@@ -537,33 +537,43 @@ if (hasDriversLicence && hasGoodVision && !isTired) {
 // console.log(ages);
 
 //array operations
-const friends = ["Michael", "Steven", "Peter"];
+// const friends = ["Michael", "Steven", "Peter"];
 
-//add elements
-const newLenght = friends.push("Jay");
-console.log(friends);
-console.log(newLenght);
+// //add elements
+// const newLenght = friends.push("Jay");
+// console.log(friends);
+// console.log(newLenght);
 
-friends.unshift("John");
-console.log(friends);
+// friends.unshift("John");
+// console.log(friends);
 
-//remove elements
-friends.pop(); //last element
-const popped = friends.pop();
-console.log(popped);
-console.log(friends);
+// //remove elements
+// friends.pop(); //last element
+// const popped = friends.pop();
+// console.log(popped);
+// console.log(friends);
 
-friends.shift(); //first element
-console.log(friends);
+// friends.shift(); //first element
+// console.log(friends);
 
-console.log(friends.indexOf("Steven"));
-console.log(friends.indexOf("Bob")); //not in there
+// console.log(friends.indexOf("Steven"));
+// console.log(friends.indexOf("Bob")); //not in there
 
-friends.push(23);
-console.log(friends.includes("Steven"));
-console.log(friends.includes("Bob"));
-console.log(friends(23));
+// friends.push(23);
+// console.log(friends.includes("Steven"));
+// console.log(friends.includes("Bob"));
+// console.log(friends(23));
 
-if (friends.includes("Steven")) {
-  console.log("You have aa friend called Steven");
+// if (friends.includes("Steven")) {
+//   console.log("You have aa friend called Steven");
+// }
+
+function calcTip(bill) {
+  const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+  return tip;
 }
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(bills, tips, totals);
