@@ -619,41 +619,76 @@ if (hasDriversLicence && hasGoodVision && !isTired) {
 // );
 
 //objects methods
-const jonas = {
-  firstName: "Jonas",
-  lastName: "Schmedtmann",
-  birthYear: 1991,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
-  hasDriversLicence: true,
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicence: true,
 
-  // calcAge: function (birthYear) {
-  //   return 2037 - birthYear;
-  // }
+//   // calcAge: function (birthYear) {
+//   //   return 2037 - birthYear;
+//   // }
 
-  // calcAge: function () {
-  //   return 2037 - this.birthYear;
-  // },
+//   // calcAge: function () {
+//   //   return 2037 - this.birthYear;
+//   // },
 
-  calcAge: function () {
-    this.age = 2037 - this.birthYear;
-    return this.age;
-  },
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear;
+//     return this.age;
+//   },
 
-  getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()} years old ${
-      this.job
-    } , and he has ${this.hasDriversLicence ? "a" : "no"} drivers licence.`;
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()} years old ${
+//       this.job
+//     } , and he has ${this.hasDriversLicence ? "a" : "no"} drivers licence.`;
+//   },
+// };
+
+// console.log(jonas.calcAge());
+
+// console.log(jonas.age);
+// console.log(jonas.age);
+// console.log(jonas.age);
+
+// //challenge
+// //'Jonas is a 46-years old teacher, and he has a drivers licence.'
+
+// console.log(jonas.getSummary());
+
+const mark = {
+  fullName: "Mark Miller",
+  massMark: 78,
+  heightMark: 1.69,
+
+  calcMarksBMI: function () {
+    this.marksBMI = this.massMark / (this.heightMark * this.heightMark);
+    return this.marksBMI;
   },
 };
 
-console.log(jonas.calcAge());
+const john = {
+  fullName: "John Smith",
+  massJohn: 92,
+  heightJohn: 1.95,
 
-console.log(jonas.age);
-console.log(jonas.age);
-console.log(jonas.age);
+  calcJohnsBMI: function () {
+    this.johnsBMI = this.massJohn / (this.heightJohn * this.heightJohn);
+    return this.johnsBMI;
+  },
+};
 
-//challenge
-//'Jonas is a 46-years old teacher, and he has a drivers licence.'
+mark.calcMarksBMI();
+john.calcJohnsBMI();
 
-console.log(jonas.getSummary());
+console.log(mark.marksBMI, john.johnsBMI);
+
+if (mark.marksBMI > john.johnsBMI) {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.marksBMI}) is higher than ${john.fullName}'s BMI (${john.johnsBMI})`
+  );
+} else if (john.johnsBMI > mark.marksBMI) {
+  `${John.fullName}'s BMI (${john.johnsBMI}) is higher than ${mark.fullName}'s BMI (${mark.marksBMI})`;
+}
