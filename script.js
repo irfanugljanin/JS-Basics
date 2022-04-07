@@ -871,17 +871,81 @@ if (hasDriversLicence && hasGoodVision && !isTired) {
 
 // console.log(measurKelvin());
 
-const data1 = [17, 21, 23];
-const data2 = [12, 5, -5, 0, 4];
+// const data1 = [17, 21, 23];
+// const data2 = [12, 5, -5, 0, 4];
 
-console.log(`...${data1[0]}C ...${data1[1]}C ...${data1[2]}C`);
+// console.log(`...${data1[0]}C ...${data1[1]}C ...${data1[2]}C`);
 
-const printForecast = function (arr) {
-  let str = "";
-  for (let i = 0; i < arr.length; i++) {
-    str = str + `${arr[i]}C in ${i + 1} days ... `;
+// const printForecast = function (arr) {
+//   let str = "";
+//   for (let i = 0; i < arr.length; i++) {
+//     str = str + `${arr[i]}C in ${i + 1} days ... `;
+//   }
+//   console.log("..." + str);
+// };
+
+// printForecast(data1);
+
+// console.log(document.querySelector('.message').textContent);
+// document.querySelector('.message').textContent = 'Correct number';
+
+// document.querySelector('.number').textContent = 13;
+// document.querySelector('.score').textContent = 10;
+
+// document.querySelector('.guess').value = 23;
+// console.log((document.querySelector('.guess').value = 23));
+
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+let score = 20;
+
+document.querySelector(".check").addEventListener("click", function () {
+  const guess = Number(document.querySelector(".guess").value);
+
+  //When there is no input
+  if (!guess) {
+    document.querySelector(".message").textContent = "No number";
+
+    //When player wins
+  } else if (guess === secretNumber) {
+    document.querySelector(".message").textContent = "Correct number";
+    document.querySelector(".number").textContent = secretNumber;
+
+    document.querySelector("body").style.backgroundColor = "#60b347";
+
+    document.querySelector(".number").stye.width = "30rem";
+
+    // When guess is too high
+  } else if (guess > secretNumber) {
+    if (score > 1) {
+      document.querySelector(".message").textContent = "Too High";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".message").textContent = "You lost the game!";
+      document.querySelector(".score").textContent = 0;
+    }
+    // When guess is too low
+  } else if (guess < secretNumber) {
+    if (score > 1) {
+      document.querySelector(".message").textContent = "Too Low";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".message").textContent = "You lost the game!";
+      document.querySelector(".score").textContent = 0;
+    }
   }
-  console.log("..." + str);
-};
+});
 
-printForecast(data1);
+document.querySelector(".again").addEventListener("click", function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+  document.querySelector(".message").textContent = "Start guessing..";
+  document.querySelector(".score").textContent = score;
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".guess").value = "";
+  document.querySelector("body").style.backgroundColor = "#222";
+
+  document.querySelector(".number").stye.width = "15rem";
+});
