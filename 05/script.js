@@ -101,6 +101,77 @@ const restaurant = {
   // },
 };
 
+const question = new Map([
+  ["qustion", "Favorite color?"],
+  [1, "blue"],
+  [2, "red"],
+  [3, "green"],
+  ["correct", 3],
+  [true, "correct"],
+  [false, "try again"],
+]);
+console.log(question);
+
+//CONVERTING OBJECT TO MAP
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//QUIZ
+for (const [key, value] of question) {
+  if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = Number(prompt("Your answer"));
+console.log(answer);
+
+console.log(question.get(question.get("correct") === answer));
+
+//CONVERT MAP TO ARRAY
+console.log([...question]);
+console.log(question.keys());
+console.log(question.values());
+
+///////////////////
+//CHALLENGE
+const gameEvents = new Map([
+  [17, "GOAL"],
+  [36, "Substitution"][(47, "GOAL")],
+  [61, "Substitution"],
+  [64, "Yellow Card"],
+  [67, "Red Card"],
+  [70, "Substitution"],
+  [72, "Substitution"],
+  [76, "GOAL"],
+  [80, "GOAL"],
+  [92, "Yellow Card"],
+]);
+
+//1.
+const events = [...new Set(gameEvents.values())];
+
+//2.
+gameEvents.delete(64);
+
+//3.
+const time = [...gameEvents.keys().pop()];
+console.log(`An event happend, on average, every ${90 / gameEvents.size} size`);
+
+//4.
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? "FIRST" : "SECOND";
+  console.log(`[${half} HALF] ${min}: ${event}`);
+}
+
+//ARRAYS VS SETS & OBJECTS VS MAPS
+//YOU SOULD USE ARRAYS WHENEVER YOU WANT TO STORE VALUES IN ORDER AND WHEN THESE VALUES CONTAIN DUPLICATES
+//USE ARRAYS WHEN YOU NEED MANIPULATE DATA
+//USE SETS WHEN YOU NEED UNIQUE VALUES
+
+//MAP KEY DCAN HAVE ANY DATA TYPE AND THERE EASY TO ITERATE
+//USE MAPS WHEN YOU NEED KEYS THAT ARE NOT STRINGS
+//USE OBJECT WHEN YOU NEED FUNCTION AS VALUE
+
+/*
 ///////////////////
 //MAPS
 //MAP IS DATASTRUCTURE THAT WE CAN USE TO MAP VALUES TO KEYS
@@ -127,6 +198,8 @@ console.log(rest);
 // rest.size - TO SEE HOW MANY ELEMENTS
 
 rest.set([1, 2], "Test");
+*/
+
 /*
 /////////////////////////
 //SETS
