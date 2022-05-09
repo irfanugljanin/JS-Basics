@@ -101,6 +101,32 @@ const restaurant = {
   // },
 };
 
+/////////////////////////
+//SETS
+//WE ARE USING SETS FOR EXAMPLE TO DELETE DUPLICATES FROM ARRAYS
+
+const ordersSet = new Set([
+  "Pasta",
+  "Pizza",
+  "Pizza",
+  "Risotto",
+  "Pasta",
+  "Pizza",
+]);
+
+console.log(ordersSet.size);
+console.log(ordersSet.has("Pizza"));
+console.log(ordersSet.has("Bread"));
+ordersSet.add("Garlic Bread");
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+//Usecase
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+const staffUnigue = [...new Set(staff)];
+
+/*
 //PROPERTIE NAMES
 const properties = Object.keys(openingHours);
 let openStr = `We are open on ${properties.length} days:`;
@@ -116,6 +142,9 @@ const entries = Object.entries(openingHours);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close ${close}`);
 }
+
+
+*/
 /*
 //////////////////////////////
 //---OPTIONAL CHAINING ---
@@ -135,6 +164,8 @@ for (const day of days) {
 
 //OPTIONAL CHAINING ALSO WORKS WITH METHODS
 restaurant.order?.(0, 1) ?? "Method does not exist";
+restaurant.orderRisotto?.(0, 1) ?? "Method does not exist";
+
 
 //OPTIONAL CHANING WITH ARRAYS
 const users = [{ name: "Jonas", email: "jonas@gmail.com" }];

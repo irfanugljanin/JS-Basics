@@ -60,6 +60,7 @@ const game = {
   },
 };
 
+/*
 const [players1, players2] = game.players;
 console.log(players1, players2);
 
@@ -81,5 +82,18 @@ printGoals(...game.scored);
 
 team1 < team2 && console.log("Team 1 is more likely to win");
 team1 > team2 && console.log("Team 2 is more likely to win");
+*/
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
+}
+const odds = Object.values(game.odds);
+let average = 0;
+for (odd of odds) average += odds.length;
+average /= odds.length;
+console.log(average);
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
