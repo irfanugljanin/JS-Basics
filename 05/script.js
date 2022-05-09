@@ -101,6 +101,33 @@ const restaurant = {
   // },
 };
 
+///////////////////
+//MAPS
+//MAP IS DATASTRUCTURE THAT WE CAN USE TO MAP VALUES TO KEYS
+//DIFFERENCE BETWEEEN OBJECTS AND MAPS - IN MAPS KEYS CAN HAVE ANY TYPE
+
+const rest = new Map();
+rest.set("name", "Classico Italiano");
+rest.set(1, "Firence,Italy");
+rest.set(2, "Lisbon,Portugal");
+
+rest
+  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+  .set("open", 11)
+  .set("close", 23)
+  .set(true, "We are open")
+  .set(false, "We are closed");
+
+const time = 21;
+rest.get(time > rest.get("open") && time < rest.get("close"));
+
+rest.delete(2);
+console.log(rest);
+// rest.clear - REMOVING ELEMENTS
+// rest.size - TO SEE HOW MANY ELEMENTS
+
+rest.set([1, 2], "Test");
+/*
 /////////////////////////
 //SETS
 //WE ARE USING SETS FOR EXAMPLE TO DELETE DUPLICATES FROM ARRAYS
@@ -125,8 +152,10 @@ for (const order of ordersSet) console.log(order);
 //Usecase
 const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
 const staffUnigue = [...new Set(staff)];
+*/
 
 /*
+////////////
 //PROPERTIE NAMES
 const properties = Object.keys(openingHours);
 let openStr = `We are open on ${properties.length} days:`;
