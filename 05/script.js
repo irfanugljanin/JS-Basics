@@ -101,6 +101,153 @@ const restaurant = {
   // },
 };
 
+//////////////////////////////
+//----STRINGS-----
+const airLine = "TAP Air Portugal";
+const plane1 = "A320";
+
+//IF WE WANT TO SEE LETTERS BASED ON INDEX
+console.log(plane1[0]);
+console.log(plane1[1]);
+console.log(plane1[2]);
+
+//IF WE WANT TO SEE LETTER BASED ON INDEX BUT DIRECTLY
+console.log("B737"[0]);
+
+//IF WE WANT TO SEE LENGTH
+console.log(airLine.length);
+console.log("B737".length);
+
+//
+console.log(airLine.indexOf("r"));
+console.log(airLine.lastIndexOf("r"));
+console.log(airLine.indexOf("portugal"));
+
+//SLICE METHOD ALWAYS RETURN NEW STRING
+console.log(airLine.slice(4));
+//LENGTH OF THE EXTRACTED STRING IS ALWAYSS GONNA BE END - BEGINING
+console.log(airLine.slice(4, 7));
+
+console.log(airLine.slice(0, airLine.indexOf(" ")));
+console.log(airLine.slice(airLine.lastIndexOf(" ") + 1));
+
+//START EXTRACTING FROM THE END
+console.log(airLine.slice(-2));
+console.log(airLine.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === "B" || s === "E") console.log("You got the middle seat");
+  else console.log("You got lucky");
+};
+
+checkMiddleSeat("11B");
+checkMiddleSeat("23C");
+checkMiddleSeat("3E");
+
+console.log(airLine.toLowerCase());
+console.log(airLine.toUpperCase());
+
+//FIX CAPITALIZATION IN NAME
+const passenger = "jOnaAS"; //Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+
+//Comparing emis
+const email = "hello@jonas.io";
+const loginEmail = "Hello@Jonas.Io \n";
+
+//INSTEAD OF THIS
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+
+//WE CAN USE THIS
+const normalizedEmail = loginEmail.toLowerCase().trim();
+
+//REPLACING PART OF STRINGS
+const priceGB = "288,97$";
+const priceEU = priceGB.replace("$", "e").replace(",", ".");
+const annoucement = "All passengers come to boarding door 23. Boarding door23!";
+console.log(annoucement.replace("door", "gate"));
+console.log(annoucement.replaceAll("door", "gate"));
+//REGULAR EXPRESSIONS
+console.log(annoucement.replace(/door/g, "gate"));
+
+//BOOLEANS
+const plane2 = "Airbus A320neo";
+console.log(plane2.includes("A320"));
+console.log(plane2.includes("Boeing"));
+console.log(plane2.startsWith("Air"));
+
+if (plane2.startsWith("Airbus") && plane2.endsWith("neo")) {
+  console.log("Part of NEW Airbus family");
+}
+
+//PRACTICE EXERCISE
+const checkBaggage = function (item) {
+  const baggage = item.toLowerCase();
+  if (baggage.includes("knife") || baggage.includes("gun")) {
+    console.log("You are not allowed on board");
+  } else {
+    console.log("Welcome aboard!");
+  }
+};
+
+checkBaggage("I have a laptop, some Food and a pocket Knife");
+checkBaggage("Socks and camera");
+checkBaggage("Got some snacks and a gun for protection");
+
+//SPLIT AND JOIN
+console.log("a+very+nice+string".split("+"));
+console.log("Jonas Schmedtmann".split(" "));
+
+const [firstName, lastName] = "Jonas Schmedtmann".split(" ");
+["Mr.", firstName, lastName.toUpperCase()].join(" ");
+
+const capitalizeName = function (name) {
+  const names = name.split(" ");
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(" "));
+};
+capitalizeName("jessice ann smith davis");
+capitalizeName("jonas schmedtmann");
+
+//PADDING
+//padStart WILL ADD SOMETHING AT START OF YOUR STRING
+//FIRST U NEED TO WRITE HOW MANY CHARACTERS WILL AT TOTAL WILL YOUR STRING HAVE AND THEN WHAT YOU WANT TO ADD
+const message = "Go to gate 23";
+console.log(message.padStart(25, "+"));
+
+//BESIDES padStart WE HAVE padEnd PROPERTIE WHICH WILL ADD SOMETHING AT THE END OF YOUR STRING
+console.log(message.padStart(25, "+").padEnd(35, "+"));
+
+const maskCreditCard = function (number) {
+  const str = number + "";
+  const last = str.slice(-4);
+  return last.padStart(str.length, "*");
+};
+
+console.log(maskCreditCard(433784555324745));
+
+//REPEAT
+//REPEAT STRING MULTIPLE TIMES
+const message2 = "Bad Weather... All Departures Delayed...";
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${"plane".repeat(n)}`);
+};
+
+planesInLine(5);
+/*
+//////////////////////////////
+//------MAPS-------
 const question = new Map([
   ["qustion", "Favorite color?"],
   [1, "blue"],
@@ -170,6 +317,7 @@ for (const [min, event] of gameEvents) {
 //MAP KEY DCAN HAVE ANY DATA TYPE AND THERE EASY TO ITERATE
 //USE MAPS WHEN YOU NEED KEYS THAT ARE NOT STRINGS
 //USE OBJECT WHEN YOU NEED FUNCTION AS VALUE
+*/
 
 /*
 ///////////////////
