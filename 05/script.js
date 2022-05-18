@@ -101,6 +101,10 @@ const restaurant = {
   // },
 };
 
+
+
+
+/*
 //////////////////////////////
 //----STRINGS-----
 const airLine = "TAP Air Portugal";
@@ -245,6 +249,9 @@ const planesInLine = function (n) {
 };
 
 planesInLine(5);
+*/
+
+
 /*
 //////////////////////////////
 //------MAPS-------
@@ -311,10 +318,10 @@ for (const [min, event] of gameEvents) {
 
 //ARRAYS VS SETS & OBJECTS VS MAPS
 //YOU SOULD USE ARRAYS WHENEVER YOU WANT TO STORE VALUES IN ORDER AND WHEN THESE VALUES CONTAIN DUPLICATES
-//USE ARRAYS WHEN YOU NEED MANIPULATE DATA
+//USE ARRAYS WHEN YOU NEED TO MANIPULATE DATA
 //USE SETS WHEN YOU NEED UNIQUE VALUES
 
-//MAP KEY DCAN HAVE ANY DATA TYPE AND THERE EASY TO ITERATE
+//MAP KEY DCAN HAVE ANY DATA TYPE AND THEY EASY TO ITERATE
 //USE MAPS WHEN YOU NEED KEYS THAT ARE NOT STRINGS
 //USE OBJECT WHEN YOU NEED FUNCTION AS VALUE
 */
