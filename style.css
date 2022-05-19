@@ -45,3 +45,14 @@ header h2 {
   background: rgb(114, 67, 158);
   color: white;
 }
+
+.gallery-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+}
+
+.gallery-info a {
+  color: gray;
+}
