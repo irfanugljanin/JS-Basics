@@ -96,6 +96,7 @@ const greetArr = (greeting) => (name) => console.log(`${greeting} ${name}`);
 greetArr("Hi")("Jonas");
 */
 
+/*
 const lufthansa = {
   airline: "Lufthansa",
   iataCode: "LH",
@@ -153,3 +154,46 @@ bookEW(23, "Steven Williams");
 const bookEW23 = book.bind(eurowings, 23);
 bookEW23("Jonas");
 bookEW23("Martha");
+*/
+
+// const secureBooking = function () {
+//   let passengerCount = 0;
+
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passenger`);
+//   };
+// };
+
+// const booker = secureBooking();
+// booker();
+// booker();
+// booker();
+
+//A FUNCTION HAS ACCES TO THE VARIABLE ENVIORMENT OF THE EXECUTION IN WHITCH IT WAS CREATED
+//CLOSURE HAVE PRIORITY OVER SCOPE CHAIN
+
+// let f;
+
+// const g = function () {
+//   const a = 23;
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
+
+// g();
+// f();
+
+const boardPassenger = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+boardPassenger(180, 3);
