@@ -74,3 +74,42 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+//  SIMPLE ARRAY METHODS
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4));
+console.log(arr.slice(-2));
+//SLICE AND REST WORKS SAME
+console.log(arr.slice());
+console.log([...arr]);
+
+//SPLICE
+//MUTATING ARRAY
+//SPLICE MUTATE ARRAY
+//REMOVING ELEMENTS FROM ARRAAY
+console.log(arr.splice(2));
+console.log(arr);
+arr.splice(-1);
+
+//REVERSE
+//MUTATES ALSO
+//REVERSE THE ORDER OF ARRAY ELEMENTS
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse());
+console.log(arr2);
+
+//CONCAT
+//DOES NOT MUTATE ARRAY
+//WORKS SAME WAY AS THE SPREAD OPERATOR
+const letters = arr.concat(arr2);
+console.log(letters);
+//SAME AS SPREAD OPEATOR
+//console.log([...arr, ...arr2])
+
+//JOIN
+console.log(letters.join('-'));
+
+
