@@ -30,6 +30,11 @@ const countriesContainer = document.querySelector('.countries');
 // getCountryData('portugal');
 // getCountryData('usa');
 
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  countriesContainer.style.opacity = 1;
+};
+
 const renderCountry = function (data, className = '') {
   const html = ` 
   <article class="country ${className}">
@@ -45,9 +50,9 @@ const renderCountry = function (data, className = '') {
     </div>
   </article>`;
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
+  // countriesContainer.style.opacity = 1;
 };
-
+/*
 const getCountryAndNeighbour = function (country) {
   //AJAX call country 1
   const request = new XMLHttpRequest();
@@ -78,3 +83,65 @@ const getCountryAndNeighbour = function (country) {
 };
 
 getCountryAndNeighbour('portugal');
+*/
+
+// const request = new XMLHttpRequest();
+// request.open('GET', `https://restcountries.com/v2/name/${country}`);
+// request.send();
+
+// const request = fetch('https://restcountries.com/v2/name/portugal');
+
+// const getCountryData = function (country) {
+//   fetch(`https://restcountries.com/v2/name/${country}`)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       renderCountry(data[0]);
+//     });
+// };
+
+const getJSON = function (url, errorMsg = 'Something went wrong') { 
+  return fetch(url).then(response => {
+  if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+
+  return response.json();
+});}
+
+
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v2/name/${country}`)
+    .then(response => {
+      if (!response.ok)
+        throw new Error(`Country not found (${response.status})`);
+
+      return response.json();
+    })
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbour = "dafasf";
+
+      if (!neighbour) return;
+
+      return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
+    })
+    .then(response => {
+      if (!response.ok)
+        throw new Error(`Country not found (${response.status})`);
+        
+      return response.json())
+    })
+    .then(data => renderCountry(data, 'neighbour'))
+    .catch(err => {
+      renderError(`Something went wrong ${err.message}. Try again`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
+};
+
+btn.addEventListener('click', function () {
+  getCountryData('portugal');
+});
+
+// getCountryData('asda');
