@@ -29,7 +29,7 @@ const countriesContainer = document.querySelector('.countries');
 // };
 // getCountryData('portugal');
 // getCountryData('usa');
-
+/*
 const renderError = function (msg) {
   countriesContainer.insertAdjacentText('beforeend', msg);
   countriesContainer.style.opacity = 1;
@@ -81,9 +81,9 @@ const getCountryAndNeighbour = function (country) {
     });
   });
 };
-
-getCountryAndNeighbour('portugal');
 */
+// getCountryAndNeighbour('portugal');
+// */
 
 // const request = new XMLHttpRequest();
 // request.open('GET', `https://restcountries.com/v2/name/${country}`);
@@ -101,6 +101,8 @@ getCountryAndNeighbour('portugal');
 //     });
 // };
 
+
+/*
 const getJSON = function (url, errorMsg = 'Something went wrong') {
   return fetch(url).then(response => {
     if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
@@ -143,3 +145,5 @@ const getCountryData = function (country) {
 btn.addEventListener('click', function () {
   getCountryData('portugal');
 });
+*/
+
