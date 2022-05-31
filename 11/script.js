@@ -143,6 +143,8 @@ btn.addEventListener('click', function () {
 });
 */
 
+/*
+
 const whereAmI = function (lat, lng) {
   fetch(`https://geocode.xyz/${lat}, ${lng}?geoit=json`)
     .then(response => {
@@ -165,4 +167,30 @@ const whereAmI = function (lat, lng) {
 
 whereAmI(52.508, 13.381);
 
-navigator.geolocation.getCurrentPosition(position);
+*/
+
+const lotteryPromise = new Promise(function (resolve, reject) {
+  console.log('Lottery draw is happening');
+  setTimeout(function () {
+    if (Math.random() >= 0.5) {
+      resolve('You Win');
+    } else {
+      reject(new Error('You lost ur money'));
+    }
+  }, 2000);
+});
+
+lotteryPromise.then(res => console.log(res)).catch(err => console.log(error));
+
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
+
+wait(2)
+  .then(() => {
+    console.log('I waited 2 seconds');
+    return wait(1);
+  })
+  .then(() => console.log('I waited 2 seconds'));
